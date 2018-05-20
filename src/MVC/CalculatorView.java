@@ -10,7 +10,7 @@ import javax.swing.*;
  *
  * @author mikeg
  */
-public class calculatorView extends JFrame{
+public class CalculatorView extends JFrame{
     
     private JTextField firstNumber = new JTextField(10);
     private JLabel additionLabel = new JLabel("+");
@@ -18,8 +18,9 @@ public class calculatorView extends JFrame{
     private JButton calculateButton = new JButton("Calculate");
     private JTextField calcSolution = new JTextField(10);
     
-    calculatorView(){
-      
+    CalculatorView(){
+      // Sets up the view and adds the components
+
         JPanel calcPanel = new JPanel();
         
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,12 +59,13 @@ public class calculatorView extends JFrame{
          
      }
      
-     void addCalculationListener(ActionListener listenerForCalcButton){
+     void addCalculateListener(ActionListener listenForCalcButton){
          
-         calculateButton.addActionListener(listenerForCalcButton);
+         calculateButton.addActionListener(listenForCalcButton);
          
      }
-     
+     // Popup that contains the error message
+
      void displayErrorMessage(String errorMessage){
          
          JOptionPane.showMessageDialog(this, errorMessage);

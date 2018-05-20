@@ -13,11 +13,11 @@ public class mvcCalculator {
     
     public static void main(String[] args){
     
-    calculatorView calcView = new calculatorView();
+    CalculatorView calcView = new CalculatorView();
     
-    calculatorModel calcModel = new calculatorModel();
+    CalculatorModel calcModel = new CalculatorModel();
     
-    calculatorController theController = new calculatorController(calcView, calcModel);
+    CalculatorController theController = new CalculatorController(calcView, calcModel);
     
     calcView.setVisible(true);
     
