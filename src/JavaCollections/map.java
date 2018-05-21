@@ -5,7 +5,6 @@
  */
 package JavaCollections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 /**
  *
@@ -15,19 +14,15 @@ public class map {
      public static void main(String[] args) {
          
          Map<Integer, String> map = new HashMap<>();
-         map.put(1, "one");
-         map.put(2, "two");
-         map.put(3, "three");
+         map.put(1, "red");
+         map.put(2, "yellow");
+         map.put(3, "blue");
          
          //Iterate over the map and print
          System.out.println("Key\tValue");
-         Iterator iterator = map.keySet().iterator();
-         while(iterator.hasNext())
-         {
-             Integer key = (Integer)iterator.next();
+         for (Integer key : map.keySet()) {
              String value = map.get(key);
              System.out.println(key + "\t" +  value);
-             
          }
         
      }
