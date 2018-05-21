@@ -9,11 +9,6 @@ package Hibernate;
  *
  * @author mikeg
  */
-class Transaction {
-    
-    void commit() {
-        throw new UnsupportedOperationException("Not supported yet."); 
-        //To change body of generated methods, choose Tools | Templates.
-}
+class Employee {
     
 }
