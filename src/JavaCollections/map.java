@@ -26,7 +26,7 @@ public class map {
          {
              Integer key = (Integer)iterator.next();
              String value = map.get(key);
-             System.out.println(key +  value);
+             System.out.println(key + "\t" +  value);
              
          }
         
