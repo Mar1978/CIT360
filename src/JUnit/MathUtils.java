@@ -9,10 +9,10 @@ package JUnit;
  *
  * @author mikeg
  */
-class SimpleJunit {
-
-    int muliply(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+public class MathUtils {
+    public static double multiply(double a, double b){
+        return a*b;
     }
+ 
     
 }
