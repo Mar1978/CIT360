@@ -4,11 +4,9 @@
  * and open the template in the editor.
  */
 package JavaCollections;
-
 /**
  *
  * @author mikeg
  */
-public class set {
-    
+public class mainCollections {
 }

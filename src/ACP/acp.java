@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JavaCollections;
+package ACP;
 
 /**
  *
  * @author mikeg
  */
-public class queue {
+public class acp {
     
 }

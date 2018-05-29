@@ -10,7 +10,7 @@ import java.util.Map;
  *
  * @author mikeg
  */
-public class map {
+public class mapCollections {
      public static void main(String[] args) {
          
          Map<Integer, String> map = new HashMap<>();
@@ -18,7 +18,7 @@ public class map {
          map.put(2, "yellow");
          map.put(3, "blue");
          
-         //Iterate over the map and print
+         //Iterate over the mapCollections and print
          System.out.println("Key\tValue");
          for (Integer key : map.keySet()) {
              String value = map.get(key);

@@ -9,10 +9,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 /**
  *
@@ -28,10 +28,10 @@ public class JSON {
         String name = input.nextLine();
 
         //Create new JSON Object
-        JSONObject tuna = new JSONObject();
+        JSONObject Tuna = new JSONObject();
 
         //Name Value
-        tuna.put("name", name);
+        Tuna.put("name", name);
 
         JSONArray courses = new JSONArray();
 
@@ -64,20 +64,52 @@ public class JSON {
         }
 
         //add array to tuna object
-        tuna.put("courses", courses);
+        Tuna.put("courses", courses);
 
-        System.out.println(tuna.toJSONString());
+        System.out.println(Tuna.toJSONString());
 
         //Create file
         File file = new File("StudentGrades.txt");
 
-        try {
-            PrintWriter writer;
-            writer = new PrintWriter(file);
+        try (PrintWriter writer = new PrintWriter(file)){
+            writer.print(Tuna.toJSONString());
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(JSON.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.toString());
+        }
+
+        System.out.println("File created successfully\n\n Hit Enter to display ");
+        input.nextLine();
+
+        try {
+            input = new Scanner(file);
+            StringBuilder jsonIn = new StringBuilder();
+            while (input.hasNextLine()) {
+                jsonIn.append(input.nextLine());
+            }
+            System.out.println(jsonIn.toString());
+            
+            JSONParser parser = new JSONParser();
+            
+            JSONObject objTuna = (JSONObject) parser.parse(jsonIn.toString());
+            
+            System.out.printf("Student name is %s\n", objTuna.get("name").toString());
+            
+            JSONArray coursesIn = (JSONArray) objTuna.get("courses");
+            
+            for (int i = 0; 1 < coursesIn.size(); i++) {
+                JSONObject courseIn = (JSONObject) coursesIn.get(i);
+                long gradeIn = (long) courseIn.get("grade");
+                String nameIn = (String) courseIn.get("name");
+                
+                System.out.printf("Course %s; grade %d\n", nameIn, gradeIn);
+                
+            }
+
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.toString());
+        } catch (ParseException ex){
+            
         }
 
     }
-
 }

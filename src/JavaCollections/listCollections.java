@@ -9,14 +9,14 @@ import java.util.*;
  *
  * @author mikeg
  */
-public class list {
+public class listCollections {
     
     public static void main (String[] args) {
         String[] stuff ={"shoes", "pen", "wallet", "chips"};
         List<String> list1 =new ArrayList<String>();
         
         
-        //add array items to list
+        //add array items to listCollections
         for(String x: stuff)
             list1.add(x);
         
@@ -24,11 +24,11 @@ public class list {
         List<String> list2 = new ArrayList<String>();
         
         
-        //add array items to list
+        //add array items to listCollections
         for(String y: morestuff)
             list2.add(y);
         
-        //print out list 1
+        //print out listCollections 1
         for(int i =0;i<list2.size();i++){
             System.out.printf("%s ", list2.get(i));
         }       
@@ -37,7 +37,7 @@ public class list {
         editlist(list1,list2);
         System.out.println();
             
-        //print out list 1    
+        //print out listCollections 1    
         for(int i =0;i<list1.size();i++){
             System.out.printf("%s ", list1.get(i));
     }
