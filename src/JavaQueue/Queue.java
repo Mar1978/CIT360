@@ -10,7 +10,7 @@ package JavaQueue;
  * @author mikeg
  */
 public class Queue {
-    private int[] object;    ;
+    private int[] object;    
     private int front;
     private int rear;
     private int queueSize;
